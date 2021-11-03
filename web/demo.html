@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Demo</title>
+    <style>
+        .highlight {
+            color: red;
+            background-color: yellow;
+        }
+
+        .normal {
+            color: black;
+            background-color: aliceblue;
+        }
+    </style>
+    <script src="demo.js"></script>
+</head>
+<body>
+<h1 class="normal"
+    onmouseover="ChangeStyle(this, 'normal', 'highlight')"
+onmouseout="ChangeStyle(this, 'highlight', 'normal')">yeet</h1>
+<button onclick="SayHello()">Click me!</button>
+<p id="clever-id"></p>
+<p id="objectDemo"></p>
+
+<div id ="mySong"></div>
+<button onclick="AddLine(document.getElementById('mySong'))">sing for me</button>
+<button onclick="DeleteLastLine(document.getElementById('mySong'))">no</button>
+
+<script>
+    class Person {
+        constructor(fName, lName, age) {
+            this.firstName = fName;
+            this.lastName = lName;
+            this.age = age;
+        }
+
+        getFullName() {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    let anon = new Person("Anon", "Ymous", "1004");
+    document.getElementById("objectDemo").innerHTML = anon.getFullName() + " " + anon.age;
+</script>
+
+</body>
+</html>
